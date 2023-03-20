@@ -1,0 +1,115 @@
+
+<style>
+    .cnt-c{
+       
+        margin-top:3rem;
+        margin-left:auto;
+        margin-bottom: 4rem;
+        margin-right:auto ;
+        width: 30rem;
+    }
+    .card-title{
+    
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn{
+        width: 15rem;
+        height: 3rem;
+        margin-left: 6rem;
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(163, 241, 163),
+          rgb(11, 251, 11)
+        );
+  border-style: none;
+          color: black;
+        font-weight: bolder;
+        font-size: larger;
+        margin-bottom: 2rem;
+        border-color: rgb(11, 117, 41);
+    }
+    .btn:hover{
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(163, 241, 163),
+        rgb(11, 251, 11)
+      );
+        border-style: none;
+        color: rgb(11, 117, 41);
+    }
+    .lay-c{
+        border-color: black;
+        border-radius: 1rem;
+        margin-top: 2rem;
+    
+    }
+    .reg-l:hover{
+        font-weight: bolder;
+    }
+    .top-p{
+  margin-top: 6rem;
+  width: 28rem;
+  
+}
+.btn{
+    width: 15rem;
+    height: 3rem;
+    margin-left: 6rem;
+    background-color: rgb(11, 117, 41);
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 2rem;
+    border-color: rgb(11, 117, 41);
+}
+    @media only screen and (max-width: 600px)  {
+  .btn{
+    width: 8rem;
+    height: 3rem;
+    margin-left: 6rem;
+    background-color: rgb(11, 117, 41);
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 2rem;
+    border-color: rgb(11, 117, 41);
+}
+.top-p{
+  margin-top: 6rem;
+  width: 16rem;
+  
+}
+}
+
+    
+    </style>
+    <div class="container card cnt-c lay-c top-p" >
+        <h5 class="card-title card-title">OTP VERIFICATION</h5>
+        <section>
+        <label >OTP sended to {{email}}</label>
+
+        </section>
+        <div class="row">
+          <div class="col-sm">
+            
+            <form method="post" name="otp_form" action="otp">
+            {%csrf_token%}
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Enter your 6 Digit OTP </label>
+                  <input type="password" class="form-control lay-c" id="exampleInputPassword1" name="otp_user">
+                </div>
+               
+                <button type="submit" class="btn lay-c">Submit</button>
+              </form>
+            
+            <div >
+                <p>Wrong Email?</p>
+                <a  class="reg-l" href="http://127.0.0.1:8000/Register">Register</a></div>
+    
+    
+          </div>
+        </div>
+      </div>

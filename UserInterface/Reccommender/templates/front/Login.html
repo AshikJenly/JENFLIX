@@ -1,0 +1,111 @@
+
+<style>
+.cnt-c{
+   
+    margin-top:3rem;
+    margin-left:auto;
+    margin-bottom: 4rem;
+    margin-right:auto ;
+    width: 30rem;
+}
+.card-title{
+
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    width: 15rem;
+    height: 3rem;
+    margin-left: 6rem;
+background-image: linear-gradient(
+      to bottom right,
+      rgb(163, 241, 163),
+      rgb(11, 251, 11)
+    );  
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 2rem;
+    border-color: rgb(11, 117, 41);
+    border-style: none;
+}
+.btn:hover{
+    border-color: rgb(11, 117, 41);
+ background-image: linear-gradient(
+      to bottom right,
+      rgb(163, 241, 163),
+      rgb(11, 251, 11)
+    );
+   }
+.lay-c{
+    border-color: black;
+    border-radius: 1rem;
+
+}
+.reg-l:hover{
+    font-weight: bolder;
+
+}
+.top-p{
+  margin-top: 6rem;
+  width: 28rem;
+  
+}
+@media only screen and (max-width: 600px)  {
+  .btn{
+    width: 8rem;
+    height: 3rem;
+    margin-left: 6rem;
+   background-image: linear-gradient(
+      to bottom right,
+      rgb(163, 241, 163),
+      rgb(11, 251, 11)
+    ); 
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 2rem;
+    border-color: rgb(11, 117, 41);
+}
+.top-p{
+  margin-top: 6rem;
+  width: 16rem;
+  
+}
+}
+</style>
+<div class="container card cnt-c lay-c top-p" >
+  <h5 class="card-title card-title">LOGIN</h5>
+  
+  <h6 style="color: red;">{{Message}}</h6>
+  
+    <div class="row">
+      <div class="col-sm">
+        
+        <form method="post">
+        {%csrf_token%}
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control lay-c" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control lay-c" id="exampleInputPassword1" name="pass">
+            </div>
+            <div class="form-group form-check">
+           
+            </div>
+            
+            <button type="submit" class="btn lay-c">Login</button>
+          </form>
+        
+        <div >
+            <p>Not Registered Yet?</p>
+            <a  class="reg-l" href="{{BASE_URL}}Register">Register</a></div>
+
+
+      </div>
+    </div>
+  </div>

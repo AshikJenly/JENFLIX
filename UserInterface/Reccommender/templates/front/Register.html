@@ -1,0 +1,201 @@
+
+<style>
+    
+
+ 
+   .cnt-c{
+       
+        margin-top:3rem;
+        margin-left:auto;
+        margin-bottom: 4rem;
+        margin-right:auto ;
+        width: 30rem;
+    }
+    .card-title{
+    
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btns{
+        width: 15rem;
+        height: 3rem;
+        margin-top: 1rem;
+        margin-left: 6rem;
+        background-color: rgb(11, 117, 41);
+        color: black;
+        font-weight: bolder;
+        font-size: larger;
+        margin-bottom: 2rem;
+        border-color: rgb(11, 117, 41);
+    }
+    .btns:hover{
+        border-color: rgb(11, 117, 41);
+        color: rgb(11, 117, 41);
+    }
+    .lay-c{
+        border-color: black;
+        border-radius: 1rem;
+        
+    }
+    .login:hover{
+        font-weight: bolder;
+
+    }
+    .s-group{
+      
+        
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        /* display: flex; */
+        
+    }
+    .btn{
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(163, 241, 163),
+        rgb(11, 251, 11)
+      );
+border-style: none;
+    }
+    .btn:hover{
+      color: black;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(110, 224, 110),
+        rgb(6, 205, 6)
+      );
+    }
+   .btn-college{
+    margin-left: 1rem;
+        color: rgb(8, 8, 8);
+        font-weight: bolder;
+        font-size: 1rem;
+       
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(163, 241, 163),
+          rgb(11, 251, 11)
+        );
+        border-style: none;
+   }
+   .btn-college:hover{
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(110, 224, 110),
+        rgb(6, 205, 6)
+      );
+   }
+   .top-p{
+    margin-top: 6rem;
+    
+    
+  }
+ 
+   @media only screen and (max-width: 600px)  {
+    
+    .btn{
+      width: 8rem;
+      height: 3rem;
+      margin-left: 6rem;
+     
+      color: black;
+      font-weight: bolder;
+      font-size: larger;
+      margin-bottom: 2rem;
+      border-color: rgb(11, 117, 41);
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(163, 241, 163),
+        rgb(11, 251, 11)
+      );
+  }
+  .btn-college{
+    margin-left: 1rem;
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(163, 241, 163),
+        rgb(11, 251, 11)
+      );
+        color: rgb(8, 8, 8);
+        font-weight: bolder;
+        font-size: 0.7rem;
+        border-color: rgb(11, 117, 41);
+
+   }
+  .top-p{
+    margin-top: 6rem;
+    width: 16rem;
+    
+  }
+  .select-coll{
+    font-size: 0.5rem;
+
+  }
+}
+    </style>
+    <div class="container card cnt-c lay-c mar-r top-p" >
+        <h5 class="card-title card-title">Register</h5>
+      
+       <h6 style="color: red;">{{Message}}</h6>
+       
+       <div class="row">
+          <div class="col-sm">
+            
+            <form method="post" name="reg_form">
+            {%csrf_token%}
+            <!-- fname -->
+                <div class="form-group">
+                  
+                  <label for="exampleInputEmail1">First Name</label>
+                  <input  class="form-control lay-c"  name="fname" required>
+                </div>
+                <!-- lname -->
+                <div class="form-group">
+                     <label for="exampleInputEmail1">Last Name</label>
+                     <input  class="form-control lay-c"  name="lname">
+                </div>
+                <!-- College -->
+
+                <div class="form-group s-group">
+                    
+                    <label for="college">Select your college:</label>
+                    
+                    <select class="dropdown btn lay-c btn-college" name="cname" id="college" required >
+                        <option class="dropdown-item select-coll" value="" selected disabled>--Select Your College--</option>  
+                      <option value="Annamalai University">Annamalai University</option>
+                      <option  value="MIT USA">MIT USA</option>
+                      <option  value="Stanford University">Stanford University</option>
+                      <option  value="other">Other</option>
+                    </select> 
+                    
+                </div>
+                    
+                <!-- email -->
+                <div class="form-group">             
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control lay-c" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                
+                 </div>
+                <!-- lname -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password for this Site</label>
+                    <input  type="password" class="form-control lay-c"  name="u_pass">
+               </div>
+               <!-- College -->
+
+                <button type="submit" class="btn lay-c btns">Submit</button>
+              </form>
+            
+            <div>
+                <p>Already Registered ?</p>
+               
+                <a class="login" href={{BASE_URL}}>Login</a>
+           
+            </div>
+    
+    
+          </div>
+        </div>
+      </div>
