@@ -26,7 +26,7 @@ class MailVerify:
         except:
             otp="739706"
             print('Error Occured in sending mail')
-        return otp
+            return otp
 
 
 # m1=MailVerify()

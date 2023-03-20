@@ -26,7 +26,23 @@ def home_page_view(requests):
             return render(requests,'front/home.html',{'BASE_URL':BASE_URL,'log':True,'reg':False,'otp':False,'Message':Message})#after database code ,render movie page
 
     else:
+
+
         data = requests.GET.get('data')
+        try:
+            fromMovie=requests.session.get('fromMovie')
+            if fromMovie:
+                data=requests.session.get('Message')
+                requests.session['fromMovie']=False
+            
+            fromLogout=requests.session.get('fromLogout')
+            if fromLogout:
+                data=requests.session.get('Message')
+                requests.session['fromLogout']=False
+
+        except:
+            data=None
+
         if data!=None:
             return render(requests,'front/home.html',{'BASE_URL':BASE_URL,'log':True,'reg':False,'otp':False,'Message':data})
         else:
@@ -86,5 +102,9 @@ def Otpview(requests):
 def logout(request):
 
     request.session['isLogin']=False
+
     print('log out function')
-    return redirect(BASE_URL+'movies')
+    request.session['Message']="Logout Successfull"
+    request.session['fromLogout']=True
+
+    return redirect(BASE_URL)
